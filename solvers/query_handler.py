@@ -3,6 +3,7 @@ import uuid
 import networkx as nx
 import time
 import json
+import sys
 from variamos import query, model, rules
 from utils import enums, uuid_utils
 from utils import exceptions
@@ -41,10 +42,12 @@ class QueryHandler:
                     variamos_graph=nx_graph,
                 )
                 self.clif_str = clif_gen.generate_logic_model()
+                print("made clif model")
                 thread_time1 = time.thread_time_ns()
                 clif_model = self.create_clif_ast(
                     # rules=translation_rules, graph=nx_graph
                 )
+                print("parsed clif model")
                 thread_time2 = time.thread_time_ns()
             case enums.InputEnum.uvl:
                 self.model_str = model_str
@@ -82,6 +85,8 @@ class QueryHandler:
         # self.clif_str = clif_gen.generate_logic_model()
         print(self.clif_str)
         clif_mm = clif.clif_meta_model()
+        print(sys.getrecursionlimit())
+        sys.setrecursionlimit(10**9)
         clif_model: clif.Text = clif_mm.model_from_str(self.clif_str)
         return clif_model
 

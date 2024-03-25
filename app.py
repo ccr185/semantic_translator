@@ -7,6 +7,7 @@ By:
 
 import json
 import copy
+import sys
 from flask import Flask, request, jsonify, make_response, Response
 from solvers.results import StatusEnum
 from variamos import model, transform
@@ -34,6 +35,7 @@ def translate():
         return _build_cors_preflight_response()
     elif request.method == "POST":
         """Handle a translation request for a given <language>."""
+        # sys.setrecursionlimit(10**6)
         content = request.json
         # print(content['data']['project'])
         # print(content['data']["rules"])

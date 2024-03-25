@@ -21,4 +21,4 @@ RUN pip install gunicorn
 COPY . .
 
 EXPOSE 5001
-CMD ["gunicorn", "--bind=0.0.0.0:5001", "--workers=33", "app:app" , "--timeout 600" ]
+CMD ["gunicorn", "--bind=0.0.0.0:5001", "--workers=1", "app:app" , "--timeout 0" ]

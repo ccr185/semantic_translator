@@ -15,9 +15,12 @@ class UvlCLIFGenerator:
     model_str: str
 
     def generate_logic_model(self):
+        print(self.model_str)
         path = create_posix_path("generators/uvl_generator/ast.pl")
         with tempfile.NamedTemporaryFile(suffix=".uvl", delete=True) as f:
             f.write(self.model_str.encode())
+            print(f.name)
+            print("wrote model to file")
             f.flush()
             f.seek(0)
             uvl_path = create_posix_path(f.name)
@@ -28,8 +31,9 @@ class UvlCLIFGenerator:
                     # However, our parser will not like quoted strings
                     # So we need to remove the quotes
                     parse_result = prolog_thread.query(
-                        f"print_clif_from_ast('{uvl_path}', CLIFS)", 100
+                        f"debug(parser), print_clif_from_ast('{uvl_path}', CLIFS)", 100
                     )
+            print("Query Complete")
             if parse_result is False:
                 raise PrologResultNotAvailableError()
             raw_clif_string = parse_result[0]["CLIFS"]
