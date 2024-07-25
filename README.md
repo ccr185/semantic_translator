@@ -7,8 +7,6 @@ deal with textual variability modeling languages. As such, all the data here con
 
 This version reflects the status of the repository at the time of submission.
 
-It has the following stable URL https://zenodo.org/doi/10.5281/zenodo.12559496
-
 Added to this zip file is the data used for experimentation in the benchmark folder and the script used to get the exact data used in the paper.
 
 The data consists of a large collection of Variability Models in the UVL textual format.
