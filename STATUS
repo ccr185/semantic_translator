@@ -1,0 +1,5 @@
+This prototype aspires to the following two badges:
+
+"Artifact Evaluated" - "Functional": The provided snapshot of the repository plus the benchmark data, the script to run it, and the original benchmark results are provided. The software is provided in working order. All code is commented in detail and provides details as to how it operates. While not production ready, nor fully documented with absolute detail, it remains usable as is, and is indeed used in coursework at the authors' current affiliation.
+
+"Artifact Available": The code has been released on GitHub with the appropriate license and has the following stable URL https://zenodo.org/doi/10.5281/zenodo.12559496

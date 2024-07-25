@@ -1,0 +1,13 @@
+The requirements to run this software are as follows:
+
+- Linux
+- A working docker distribution with the ability to allow for network requests to containers.
+- Bash and the ability to run bash scripts on the machine.
+- a GNU xargs installation available on the PATH
+- a jq (https://github.com/jqlang/jq) installation on the PATH, also available as a package for ubuntu/debian/fedora/suse/arch (https://jqlang.github.io/jq/download/)
+- an installation of curl available on the PATH
+
+NOTE: Check the parallelism configuration outlined in the readme before building the container and running the benchmark script.
+The prototype was originally run on a strong machine with a very large amount of RAM and a high core count processor and hence toning down these settings
+may be beneficial for stability/resource usage but may make running the benchmark much longer.
+
