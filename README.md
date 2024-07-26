@@ -20,6 +20,7 @@ git submodule update --init
 
 **N.B.** If you are downloading a release, you will not have the ability to clone the submodule. You will need to download the submodule separately from the uvl-prolog repository in order for the software to work. The commands to do so are as follows:
 ```
+git init
 rm -r generators/uvl_generator
 git submodule add --branch leftassoc --force git@github.com:ccr185/uvl-prolog.git generators/uvl_generator
 ```
