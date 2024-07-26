@@ -11,6 +11,19 @@ Added to this zip file is the data used for experimentation in the benchmark fol
 
 The data consists of a large collection of Variability Models in the UVL textual format.
 
+# Cloning the repository
+
+This repository requires the *uvl-prolog* submodule to be cloned as well. To clone the repository with the submodule, use the following command after cloning this repository:
+```
+git submodule update --init
+```
+
+**N.B.** If you are downloading a release, you will not have the ability to clone the submodule. You will need to download the submodule separately from the uvl-prolog repository in order for the software to work. The commands to do so are as follows:
+```
+rm -r generators/uvl_generator
+git submodule add --branch leftassoc --force git@github.com:ccr185/uvl-prolog.git generators/uvl_generator
+```
+
 # Instructions to run the Extended PLEIADES Architecture Prototype and Benchmarks
 
 N.B. The prototype has *only* been tested to run reliably on linux. The recommended platform-independent installation is through Docker.
